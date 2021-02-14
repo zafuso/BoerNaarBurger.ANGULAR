@@ -1,0 +1,81 @@
+#footer {
+  bottom: 0;
+  width: 100%;
+  background-color: #005622;
+  height: 425px;
+}
+
+.footerimage {
+  width: 100%;
+}
+
+.a-footer {
+  color: white;
+}
+
+.a-footer:hover {
+  color: #E38F88;
+}
+
+.a-icons {
+  font-size: 3em;
+}
+
+.email:hover {
+  color: #E38F88;
+}
+
+.footer-copyright{
+  bottom: 0;
+  width: 100%;
+  background-color: #E38F88;
+  padding: 15px;
+  color:black;
+  font-family: 'Dosis', sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.btn-pink {
+  color: whitesmoke;
+  background-color: rgb(217, 99, 89);
+  border-color: rgb(217, 99, 89);
+  border-radius: 12px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-pink:hover {
+  background-color: #ba554c;
+  border-color: #ba554c;
+  border-radius: 12px;
+  color: whitesmoke;
+}
+
+.btn-pink:focus,
+.btn-pink.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(186, 85, 76, 0.25);
+  color: whitesmoke;
+}
+
+.btn-pink:active {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(186, 85, 76, 0.25);
+  color: whitesmoke;
+}
+
+.footer-content {
+  color:whitesmoke;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+.larger-font {
+  font-size: 18px;
+}
+
+.h2-footer {
+  font-family: "Dosis", sans-serif;
+  text-transform: uppercase;
+}

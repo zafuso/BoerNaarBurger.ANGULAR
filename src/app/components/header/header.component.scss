@@ -1,0 +1,42 @@
+nav {
+  background-color: #005622;
+}
+
+.navlogo {
+  height: 55px;
+}
+
+.nav-text {
+  color: #F0FFF9;
+  font-family: 'Dosis', sans-serif;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #F0FFF9;
+  font-family: 'Dosis', sans-serif;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.nav-text-login {
+  color: #F0FFF9 !important;
+  font-family: 'Dosis', sans-serif;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.nav-text:hover {
+  color: #E38F88 !important;
+  font-weight: bold;
+}
+
+.nav-item a:hover {
+  color: #E38F88 !important;
+}
+
+.nav-active {
+  color: #E38F88 !important;
+  font-weight: bold;
+}
