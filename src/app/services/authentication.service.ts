@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import {BehaviorSubject} from 'rxjs';
-import {TokenService} from './token.service';
+import { BehaviorSubject } from 'rxjs';
+import { TokenService } from './token.service';
 
 
 @Injectable({

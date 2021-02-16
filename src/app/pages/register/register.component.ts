@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
 
   handleResponse(data) {
     this.token.handle(data.access_token);
-    this.router.navigateByUrl('/account-overview');
+    this.router.navigateByUrl('/account');
   }
 
   handleError(error) {

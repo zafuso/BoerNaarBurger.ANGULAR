@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../../services/authentication.service';
-import {TokenService} from '../../services/token.service';
-import {Router} from '@angular/router';
+import { TokenService } from '../../services/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   handleResponse(data) {
     this.token.handle(data.access_token);
     this.auth.changeAuthStatus(true);
-    this.router.navigateByUrl('/account-overview');
+    this.router.navigateByUrl('/account');
   }
 
   handleError(error) {
