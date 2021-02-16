@@ -8,12 +8,14 @@ import { RegisterComponent } from './pages/register/register.component';
 import {AccountOverviewComponent} from './dashboard/account/account-overview.component';
 import {BeforeLoginService} from './services/before-login.service';
 import {AfterLoginService} from './services/after-login.service';
+import {PasswordResetComponent} from './pages/login/password-reset/password-reset.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: LoginComponent, canActivate: [BeforeLoginService]},
+  {path: 'password-reset', component: PasswordResetComponent, canActivate: [BeforeLoginService]},
   {path: 'register', component: RegisterComponent, canActivate: [BeforeLoginService]},
   {path: 'account', component: AccountOverviewComponent, canActivate: [AfterLoginService]}
 ];

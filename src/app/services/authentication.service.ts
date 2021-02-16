@@ -28,4 +28,8 @@ export class AuthenticationService {
     this.loggedIn.next(value);
   }
 
+  sendPasswordReset(data) {
+    return this.http.post(`${this.baseUrl}/api/password-reset`, data);
+  }
+
 }

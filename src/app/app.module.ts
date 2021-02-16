@@ -13,6 +13,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AccountOverviewComponent} from './dashboard/account/account-overview.component';
 import { FormsModule } from '@angular/forms';
+import { PasswordResetComponent } from './pages/login/password-reset/password-reset.component';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 
 @NgModule({
   declarations: [
@@ -24,15 +26,20 @@ import { FormsModule } from '@angular/forms';
     ContactComponent,
     LoginComponent,
     RegisterComponent,
-    AccountOverviewComponent
+    AccountOverviewComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SnotifyModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
+    SnotifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
