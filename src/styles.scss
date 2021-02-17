@@ -5,6 +5,7 @@
 }
 
 @import '~bootstrap/dist/css/bootstrap.css';
+@import "~ng-snotify/styles/material";
 
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 
@@ -14,6 +15,10 @@
 
 .ng-valid:not(form) {
   border: 1px solid green;
+}
+
+.message-success {
+  color: #005622;
 }
 
 .btn-green {

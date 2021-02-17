@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../../../services/authentication.service';
-import {SnotifyService} from 'ng-snotify';
 
 @Component({
   selector: 'app-password-reset',
@@ -8,25 +7,36 @@ import {SnotifyService} from 'ng-snotify';
   styleUrls: ['./password-reset.component.scss']
 })
 export class PasswordResetComponent implements OnInit {
+  public error = [];
+  public loading = false;
+  public success = [];
   public form = {
     email: null
   };
 
-  constructor(private auth: AuthenticationService, private notify: SnotifyService) { }
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit(): void {
   }
 
   resetPassword() {
+    this.loading = true;
     this.auth.sendPasswordReset(this.form).subscribe(
       data => this.handleResponse(data),
-        error => this.notify.error(error.error.error)
+        error => this.handleError(error)
     );
   }
 
-  handleResponse(res) {
-    console.log(res);
+  handleResponse(data) {
+    this.loading = false;
     this.form.email = null;
+    this.success = data;
+
+  }
+
+  handleError(error) {
+    this.loading = false;
+    this.error = error.error.errors;
   }
 
 }
