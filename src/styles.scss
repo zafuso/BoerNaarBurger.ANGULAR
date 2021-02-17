@@ -134,3 +134,159 @@
   color: #E38F88 !important;
   font-weight: bold;
 }
+
+
+.profile-photo {
+  position: relative;
+}
+
+.photo-icon {
+  position: absolute;
+  height: 40px;
+  bottom: 50%;
+  right: 20%;
+}
+
+.photo-icon:hover {
+  -webkit-filter: grayscale(5);
+  -webkit-transition: all .5s ease-in-out;
+  transform: scale(1.1);
+}
+
+.footer-shop-boer{
+  padding: 4px;
+  color:whitesmoke;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.footer-shop-logo {
+  height: 30px;
+}
+
+.navigation-bar-shop {
+  background-color: #005622;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.shop-title {
+  font-weight: bold !important;
+}
+
+.shop-products {
+  font-weight: bold;
+  color: whitesmoke;
+  background-color: #005622;
+}
+
+a[aria-expanded=true] .fa-chevron-down {
+  display: none;
+}
+a[aria-expanded=false] .fa-chevron-up {
+  display: none;
+}
+
+.fa-chevron-down {
+  color: #005622;
+}
+
+.fa-chevron-up {
+  color: #005622;
+}
+
+.chevron-category {
+  color: whitesmoke !important;
+}
+
+.border-shop {
+  border-bottom: solid 1px;
+  border-color: #005622;
+}
+
+.shop-border {
+  border-top: solid 1px;
+  border-color: #005622;
+}
+
+.table-shop {
+  width: 100%;
+}
+
+.btn-increment {
+  display: inline-block;
+  background-color: #005622;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  padding-right: 9px;
+  padding-left: 9px;
+  border-color: #005622;;
+  color: whitesmoke;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-decrement {
+  display: inline-block;
+  background-color: #005622;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-color: #005622;
+  color: whitesmoke;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-increment:hover {
+  background-color: #00471c;
+  border-color: #00471c;
+  border-radius: 6px;
+  color: whitesmoke;
+}
+
+.btn-decrement:hover {
+  background-color: #00471c;
+  border-color: #00471c;
+  border-radius: 6px;
+  color: whitesmoke;
+}
+
+.btn-increment:focus,
+.btn-increment.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(53, 135, 86, 0.25);
+  color: whitesmoke;
+}
+
+.btn-decrement:focus,
+.btn-decrement.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(53, 135, 86, 0.25);
+  color: whitesmoke;
+}
+
+.shop-width {
+  width: 25%
+}
+
+.price-width {
+  width: 10%
+}
+
+.product-width {
+  width: 55%;
+}
+
+.order-overview-width {
+  width: 50%;
+}
+
+.btn-padding {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.shop-form-background {
+  background-color: whitesmoke;
+}

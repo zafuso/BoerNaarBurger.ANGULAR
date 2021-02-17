@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationService} from '../../../services/authentication.service';
-import {SnotifyService} from 'ng-snotify';
 
 @Component({
   selector: 'app-change-password',
@@ -18,8 +17,7 @@ export class ChangePasswordComponent implements OnInit {
     email: null
   };
 
-  constructor(private route: ActivatedRoute, private auth: AuthenticationService, private router: Router,
-              private notify: SnotifyService) {
+  constructor(private route: ActivatedRoute, private auth: AuthenticationService, private router: Router) {
     route.queryParams.subscribe(params => {
       this.form.resetToken = params.token;
       this.form.email = params.email;
@@ -39,7 +37,6 @@ export class ChangePasswordComponent implements OnInit {
 
   handleResponse(data) {
     this.loading = false;
-    this.notify.success('Je kunt nu inloggen met je nieuwe wachtwoord.', 'Wachtwoord gewijzigd');
     this.router.navigateByUrl('/login');
   }
 
