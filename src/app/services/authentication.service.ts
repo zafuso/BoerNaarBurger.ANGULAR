@@ -32,4 +32,9 @@ export class AuthenticationService {
     return this.http.post(`${this.baseUrl}/api/password-reset`, data);
   }
 
+  changePassword(data) {
+    return this.http.post(`${this.baseUrl}/api/change-password`, data);
+  }
+
+
 }

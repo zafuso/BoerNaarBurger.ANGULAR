@@ -15,6 +15,7 @@ import { AccountOverviewComponent} from './dashboard/account/account-overview.co
 import { FormsModule } from '@angular/forms';
 import { PasswordResetComponent } from './pages/login/password-reset/password-reset.component';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+import { ChangePasswordComponent } from './pages/login/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
     LoginComponent,
     RegisterComponent,
     AccountOverviewComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
