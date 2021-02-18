@@ -20,7 +20,7 @@ export class User implements Deserializable {
   custom_field_1: string;
   custom_field_2: string;
   user_type_id: string;
-  avatar: string;
+  profile_picture: string;
 
   deserialize(input: any): this {
     return Object.assign(this, input);

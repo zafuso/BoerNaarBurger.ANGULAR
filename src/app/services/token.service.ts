@@ -1,20 +1,28 @@
 import { Injectable } from '@angular/core';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
 
-  private iss = {
-    login : 'http://localhost:8090/api/login',
-    register : 'http://localhost:8090/api/user/create'
-  };
-  constructor() { }
+  constructor(private jwtHelper: JwtHelperService) { }
 
   handle(token) {
     this.set(token);
   }
 
+  checkToken(token, decode64 = false): boolean {
+    try {
+      if (decode64) {
+        token = atob(token);
+      }
+
+      return this.jwtHelper.decodeToken(token);
+    } catch (e) {
+      return false;
+    }
+  }
 
   set(token) {
     localStorage.setItem('token', token);
@@ -28,28 +36,15 @@ export class TokenService {
     localStorage.removeItem('token');
   }
 
-  isValid() {
-    const token = this.get();
-    if (token) {
-      const payload = this.payload(token);
-      if (payload) {
-        return Object.values(this.iss).indexOf(payload.iss) > -1;
+  loggedIn() {
+    if (this.get()){
+      const isTokenValid = this.checkToken(this.get(), false);
+
+      if (!isTokenValid) {
+        this.remove();
       }
     }
-    return false;
-  }
-
-  payload(token) {
-    const payload = token.split('.')[1];
-    return this.decode(payload);
-  }
-
-  decode(payload) {
-    return JSON.parse(atob(payload));
-  }
-
-  loggedIn() {
-    return this.isValid();
+    return !this.jwtHelper.isTokenExpired(this.get());
   }
 
 }

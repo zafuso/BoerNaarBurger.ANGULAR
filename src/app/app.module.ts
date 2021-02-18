@@ -14,9 +14,10 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AccountOverviewComponent} from './dashboard/account/account-overview.component';
 import { FormsModule } from '@angular/forms';
 import { PasswordResetComponent } from './pages/login/password-reset/password-reset.component';
-import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { ChangePasswordComponent } from './pages/login/change-password/change-password.component';
 import { AccountEditComponent } from './dashboard/account/account-edit/account-edit.component';
+import {AuthGuard} from './auth.guard';
+import {JWT_OPTIONS, JwtHelperService, JwtModule} from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -38,11 +39,12 @@ import { AccountEditComponent } from './dashboard/account/account-edit/account-e
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    SnotifyModule
+    JwtModule
   ],
   providers: [
-    { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
-    SnotifyService
+    [AuthGuard],
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })
