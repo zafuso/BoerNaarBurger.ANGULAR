@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
     remember: false,
   };
   public error = null;
-  public formFields: any;
 
   constructor(private http: HttpClient, private authenticate: AuthenticationService,
               private token: TokenService, private auth: AuthenticationService,

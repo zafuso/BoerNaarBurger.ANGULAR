@@ -9,7 +9,7 @@ import {User} from '../../../models/user.model';
 })
 export class AccountEditComponent implements OnInit {
   public user: User;
-  public users: User[];
+  public error = [];
 
   constructor(private userService: UserService) { }
 
@@ -19,6 +19,20 @@ export class AccountEditComponent implements OnInit {
 
   getUser() {
     this.userService.getUser().subscribe(user => this.user = user);
+  }
+
+  updateUser() {
+    this.userService.patchUser(this.user).subscribe(
+      data => this.handleResponse(data),
+      error => this.handleError(error)
+    );
+  }
+
+  handleResponse(data) {
+  }
+
+  handleError(error) {
+    this.error = error.error.error;
   }
 
 }

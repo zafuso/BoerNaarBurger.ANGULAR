@@ -15,9 +15,15 @@ export class UserService {
   constructor(private http: HttpClient, private token: TokenService) { }
 
   public getUser(): Observable<User> {
+    // tslint:disable-next-line:max-line-length
     return this.http.get<User>(`${this.baseUrl}/api/user`, {headers: new HttpHeaders().set(`Authorization`, `Bearer ${this.token.get()}`)}).pipe(
       map(data => new User().deserialize(data)),
       catchError(() => throwError('User not found'))
     );
+  }
+
+  public patchUser(user) {
+    // tslint:disable-next-line:max-line-length
+    return this.http.patch(`${this.baseUrl}/api/user`, user, {headers: new HttpHeaders().set(`Authorization`, `Bearer ${this.token.get()}`)});
   }
 }
